@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OneStreamXF version="6.8.1.13230">
+    <dataSourcesRoot>
+        <businessRules>
+            <businessRule businessRuleType="Connector" name="FCP_Get_Secure">
+                <accessGroup>Everyone</accessGroup>
+                <maintenanceGroup>Everyone</maintenanceGroup>
+                <isGlobal>false</isGlobal>
+                <isEncrypted>false</isEncrypted>
+                <referencedAssemblies>
+                    <referencedAssembly isInBusinessRulesAssemblyFolder="false" isOtherBusinessRule="true" isInEnvironmentSpecialFolder="false" environmentSpecialFolder="" assemblyName="FCP_INTEGRATION_UTIL" />
+                    <referencedAssembly isInBusinessRulesAssemblyFolder="false" isOtherBusinessRule="true" isInEnvironmentSpecialFolder="false" environmentSpecialFolder="" assemblyName="OS_Models" />
+                </referencedAssemblies>
+                <sourceCode><![CDATA[Imports System
+Imports System.Data
+Imports System.Data.Common
+Imports System.IO
+Imports System.Collections.Generic
+Imports System.Globalization
+Imports System.Linq
+Imports Microsoft.VisualBasic
+Imports System.Windows.Forms
+Imports OneStream.Shared.Common
+Imports OneStream.Shared.Wcf
+Imports OneStream.Shared.Engine
+Imports OneStream.Shared.Database
+Imports OneStream.Stage.Engine
+Imports OneStream.Stage.Database
+Imports OneStream.Finance.Engine
+Imports OneStream.Finance.Database
+
+Imports Newtonsoft.Json
+Imports Newtonsoft.Json.Linq
+Imports Newtonsoft.Json.JsonPropertyAttribute
+
+Imports FcpIntegrationUtil = OneStream.BusinessRule.Extender.FCP_INTEGRATION_UTIL
+Imports OneStream.BusinessRule.Extender.OS_Models
+
+Namespace OneStream.BusinessRule.Connector.FCP_Get_Secure
+	Public Class MainClass
+		Public Function Main(ByVal si As SessionInfo, ByVal globals As BRGlobals, ByVal api As Transformer, ByVal args As ConnectorArgs) As Object
+			'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+				Dim fcpIntegrator As FcpIntegrationUtil.MainClass = Nothing
+				Dim wfPOVId As String = String.Empty
+				Dim moduleName As String = args.DataSourceName 'FCP view name in this code. This is used to construct the request URI
+				Dim result As ActualsData = Nothing
+				Dim fcpRowCount As Integer = 0
+				Dim osRowCount As Integer = 0
+			'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			
+			Try
+				
+				fcpIntegrator = New FcpIntegrationUtil.MainClass(si,  moduleName)
+				Dim params = New Dictionary(Of String, String)
+
+				'Check the Connector Action - Data Source execution or WF (GetData)
+				Select Case args.ActionType
+					Case Is = ConnectorActionTypes.GetFieldList
+						
+						
+						'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+						'Get the field list (getMeta) from FCP endpoint
+						'	-Save the retrieved field list in a session state object for fast retrieval
+						'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+							Dim bf As New Runtime.Serialization.Formatters.Binary.BinaryFormatter
+							Dim fldList As List(Of String)
+							Dim objXFUserState As XFUserState = BRApi.State.GetSessionState(si, False, ClientModuleType.External, String.Empty, String.Empty, args.DataSourceName, String.Empty)
+
+							If objXFUserState IsNot Nothing Then
+								'BRAPI.ErrorLog.LogMessage
+								'Deserialize the stored list of field names from objectName (Data Source Name)
+								Dim memStream As New MemoryStream
+								memStream.Write(objXFUserState.BinaryValue, 0, objXFUserState.BinaryValue.Length)
+								memStream.Seek(0, SeekOrigin.Begin)
+								fldList = bf.Deserialize(memStream)
+							Else
+								fldList = fcpIntegrator.GetFieldList(si, params)
+								
+								If fldList IsNot Nothing Then 'set session state
+									'Save field list to avoid calling FCP everytime the Data Source needs to be edited.
+									'	If changes to the transLookup_EndPoints log out (End Session) and try again
+									Using ms As MemoryStream = New MemoryStream
+										bf.Serialize(ms, fldList)
+										brapi.State.SetSessionState(si, False, ClientModuleType.External, String.Empty, String.Empty, args.DataSourceName, String.Empty, String.Empty, ms.ToArray)
+									End Using
+								End If							
+							End If
+						
+							Return fldList
+						'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+				
+					Case Is = ConnectorActionTypes.GetData
+						
+						'-----------------------------------------------------------------------------------------
+						'GetData ConnectorActionTypes is triggered via the WF Process
+						'	-Build the endpoint
+						'-----------------------------------------------------------------------------------------
+							
+							Dim wfPeriod As Integer = TimeDimHelper.GetSubComponentsFromId(api.WorkflowUnitPk.TimeKey).Month
+							Dim wfYear As Integer = TimeDimHelper.GetYearFromId(api.WorkflowUnitPk.TimeKey)
+							Dim startPeriod As Integer = wfPeriod
+							Dim endPeriod As Integer = wfPeriod
+							Dim partialLoad As Boolean = False
+							Dim selectedPeriod As Integer = wfPeriod
+							Dim loadPeriod As Integer
+							
+							Dim wfText1KeyValuePair As New Dictionary(Of String, String)
+							Dim wfText1Value As String = api.WorkflowProfile.GetAttributeValue(api.ScenarioTypeID, SharedConstants.WorkflowProfileAttributeIndexes.Text1, String.Empty)
+							If Not String.IsNullOrWhiteSpace(wfText1Value) Then
+								wfText1KeyValuePair = wfText1Value.Split(",").ToDictionary(Function(k) k.Split("=")(0).Trim, Function(v) v.Split("=")(1).Trim)
+								
+								If wfText1KeyValuePair.ContainsKey("partialLoad") Then
+									partialLoad = Convert.ToBoolean(wfText1KeyValuePair("partialLoad"))
+								End If
+								
+								If wfText1KeyValuePair.ContainsKey("wfPeriod") Then  
+									 'This scenario is to takecare of workflows whose fcp endpoint doesn't accept neither fisical year nor period
+									 If wfText1KeyValuePair("wfPeriod").ToLower = "none" Then
+										endPeriod = 0
+										startPeriod = 0 
+										wfPeriod = 0
+									'This scenario is to takecare of workflows whose fcp endpoint accepts only fisicalyear 
+									Else If wfText1KeyValuePair("wfPeriod").ToLower = "year" Then
+										wfPeriod = -999
+										endPeriod = -999 
+										startPeriod = -999
+									'This scenario is to take care of workflow where we want from a start month to end month
+									Else If wfText1KeyValuePair("wfPeriod").ToLower = "month_to_month" Then
+										Dim wfName = api.WorkflowProfile.Name
+										startPeriod = Convert.ToInt32(BRApi.State.GetSessionState(si, False, ClientModuleType.External, "", "", si.AppName, $"start_period_{wfName}").TextValue)
+										endPeriod = Convert.ToInt32(BRApi.State.GetSessionState(si, False, ClientModuleType.External, "", "", si.AppName, $"end_period_{wfName}").TextValue)
+										wfPeriod = startPeriod
+									Else If(wfText1KeyValuePair("wfPeriod").ToLower = "all") Then
+										startPeriod = 1
+										endPeriod = 12  ' run periods 1 thru 12
+										wfPeriod = startPeriod
+									Else	
+										wfPeriod = Convert.ToInt32(wfText1KeyValuePair("wfPeriod"))		
+										If wfPeriod >= 1 And wfPeriod <=12
+											endPeriod = wfPeriod
+											startPeriod = wfPeriod
+										'This scenario is to take care of special cases where wfPeriods are not in the range 1 to 12
+										Else
+											loadPeriod = wfPeriod
+											startPeriod = -9999
+											endperiod = -9999
+											wfPeriod = -9999
+										End If
+									End If
+								End If
+							End If
+
+					
+							Do While startPeriod <= endPeriod
+								params.Clear()
+								If wfPeriod = -9999 Then
+									If selectedPeriod = 1 Then
+										params.Add("FISCAL_YR_NBR", wfYear.ToString)
+										params.Add("FISCAL_PERIOD_NBR", $"Per{loadPeriod.ToString("00")}")
+									Else
+										Throw New Exception($"Per00 cannot be loaded from period M{selectedPeriod}. Please try re-loading from period M1.")
+									End If
+								Else If wfPeriod = -999 Then
+									params.Add("FISCAL_YR_NBR", wfYear.ToString)
+								Else If wfPeriod <> 0 Then
+									params.Add("FISCAL_YR_NBR", wfYear.ToString)
+									params.Add("FISCAL_PERIOD_NBR", $"Per{wfPeriod.ToString("00")}")
+									wfPeriod += 1
+								End If
+							'-----------------------------------------------------------------------------------------
+							
+							'========================================================================================
+							'Below are the user defined FCP error codes For Get API.
+							'========================================================================================
+							'101=Error While running query
+							'102=Selected model yet Not implemented! Please check catalogue.
+							'103=Error In building attributes From resultset
+							'104=Error reading config file
+							'105=Error In building Date parameters
+							'106=Error In creating data objects
+							'107=Record count mismatch
+							'108=Error In generating query String
+							'109=Error In adding meta To data model
+							'110=Error connecting To data source.
+							'111=Year And Period are mandatory parameters
+							'112=Selected model supports pagination.Please provide appropriate page number
+							'113=Error In generating meta
+							'114=No data exists.
+							'------------------------------------------------------------------------------------------
+							
+							'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+							'Request the data from FCP, process the data in stage
+							'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+								fcpIntegrator.AddLogMessage(si, $"WF Unit Description: {api.WorkflowUnitDescription}")
+								wfPOVId = $"{api.WorkflowProfile.Name.ToUpper()}_{ScenarioDimHelper.GetNameFromId(si, api.WorkflowUnitPk.ScenarioKey).ToUpper()}_{TimeDimHelper.GetNameFromId(api.WorkflowUnitPk.TimeKey).ToUpper()}"
+								
+								fcpIntegrator.AddLogMessage(si, $"Session State Key1: {wfPOVId}")
+								
+								result = fcpIntegrator.GetDataTableFromFcp(si, params)
+								If result.Success Then
+									If result.Data IsNot Nothing And result.Data.Rows.Count > 0 Then
+										fcpRowCount += result.Data.Rows.Count 
+										api.Parser.ProcessDataTable(si, result.Data, False, api.ProcessInfo)
+										osRowCount += api.ProcessInfo.RowCount
+									Else
+										fcpIntegrator.AddLogMessage(si, $"StatusCode: {result.StatusCode}, Message: {result.ReasonPhrase}")
+									End If
+								Else
+									Dim errMsg = $"Error: StatusCode: {result.StatusCode}, Message: {result.ReasonPhrase}"
+									fcpIntegrator.AddLogMessage(si, errMsg)
+									If (Not PartialLoad) OrElse (partialLoad AndAlso result.StatusCode <> "114") Then
+										Throw New XFUserMsgException(si, New Exception(errMsg))
+									End If
+								End If
+								startPeriod += 1
+							Loop		
+						'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+						
+				End Select
+				'-----------------------------------------------------------------------------------------
+				'-----------------------------------------------------------------------------------------
+				
+				Return Nothing
+				
+			Catch ex As Exception
+				'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+				'Catch, log, and throw the exception
+				'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+					If fcpIntegrator IsNot Nothing Then
+						fcpIntegrator.AddLogMessage(si, $"Connector Main Exception: {ex.Message}")
+					End If
+					
+					Throw ErrorHandler.LogWrite(si, New XFException(si, ex))
+				'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Finally
+				'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+				'Send the Integration log to the error log
+				'Set the session state so that automation BRs can retrieve the info.
+				'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+					If result IsNot Nothing Then
+						If args.ActionType.Equals(ConnectorActionTypes.GetData) Then
+							Dim responseObject As ResponseStatus = New ResponseStatus(result.Success, result.StatusCode, result.ReasonPhrase, fcpRowCount, osRowCount)
+							Dim jsonString As String = JsonConvert.SerializeObject(responseObject)
+							'Set the session state where the key to this session state info (Connector Log details) is WorkflowName_Scenario_Period_response
+							brapi.State.SetSessionState(si, False, ClientModuleType.External, String.Empty, String.Empty, wfPOVId + "_response", String.Empty, jsonString, Nothing)
+						End If
+					End If
+					
+					If fcpIntegrator IsNot Nothing Then
+						brapi.ErrorLog.LogMessage(si, fcpIntegrator.GetIntegrationLog)
+						If args.ActionType.Equals(ConnectorActionTypes.GetData) Then
+							'Set the session state where the key to this session state info (Connector Log details) is WorkflowName_Scenario_Period
+							brapi.State.SetSessionState(si, False, ClientModuleType.External, String.Empty, String.Empty, wfPOVId, String.Empty, fcpIntegrator.GetIntegrationLog, Nothing)
+						End If
+					Else
+						'If fcpIntegrator is Nothing that means the failure happened in the Lookup Rules section above
+						If args.ActionType.Equals(ConnectorActionTypes.GetData) Then
+							'Set the session state where the key to this session state info (Connector Log details) is WorkflowName_Scenario_Period
+							brapi.State.SetSessionState(si, False, ClientModuleType.External, String.Empty, String.Empty, wfPOVId, String.Empty, "Failed to init args", Nothing)
+						End If
+					End If
+				'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			End Try
+		End Function
+	End Class
+End Namespace
+]]></sourceCode>
+            </businessRule>
+        </businessRules>
+    </dataSourcesRoot>
+</OneStreamXF>
