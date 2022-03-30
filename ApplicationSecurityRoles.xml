@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OneStreamXF version="6.8.1.13230">
+    <applicationSecurityRolesRoot>
+        <applicationSecurityRoles>
+            <role name="AdministerApplication" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP_ADMINS" accessGroupType="Group" />
+            <role name="AdministerDatabase" accessGroup="Administrators" accessGroupType="Group" />
+            <role name="OpenApplication" accessGroup="APP_USERS_ENT" accessGroupType="Group" />
+            <role name="ModifyData" accessGroup="Everyone" accessGroupType="Group" />
+            <role name="ViewAllData" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="CreateAuditAttachments" accessGroup="Everyone" accessGroupType="Group" />
+            <role name="CreateFootnoteAttachments" accessGroup="Everyone" accessGroupType="Group" />
+            <role name="CertifyAndLockDescendants" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="UnlockAndUncertifyAncestors" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="PreserveImportData" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="RestoreImportData" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="UnlockWorkflowUnit" accessGroup="ENT_UnlockWorkflowUnit" accessGroupType="Group" />
+            <role name="ViewSourceDataAudit" accessGroup="Everyone" accessGroupType="Group" />
+            <role name="EncryptBusinessRules" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="ManageApplicationProperties" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="ManageMetadata" accessGroup="Manage_Metadata" accessGroupType="Group" />
+            <role name="ManageFXRates" accessGroup="C_International" accessGroupType="Group" />
+            <role name="LockFXRates" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="UnlockFXRates" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="ManageData" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="ManageCubeViews" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="ManageDataSources" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="ManageTransformationRules" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="ManageConfirmationRules" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="ManageCertificationQuestions" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="ManageWorkflowChannels" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="ManageWorkflowProfiles" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="ManageJournalTemplates" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="ManageFormTemplates" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="ManageApplicationDashboards" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="ManageApplicationDatabaseFiles" accessGroup="Everyone" accessGroupType="Group" />
+            <role name="ManageTaskScheduler" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="TaskScheduler" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="ApplicationLoadExtractPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP_ADMINS" accessGroupType="Group" />
+            <role name="ApplicationPropertiesPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP_ADMINS" accessGroupType="Group" />
+            <role name="ApplicationSecurityRolesPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP_ADMINS" accessGroupType="Group" />
+            <role name="OnePlacePane" accessGroup="Everyone" accessGroupType="Group" />
+            <role name="BookAdminPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="BusinessRulesPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="CertificationQuestionsPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="ClientUpdaterPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="ConfirmationRulesPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="CubeAdminPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="CubeViewsPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="DashboardAdminPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="DataManagementAdminPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="TaskSchedulerPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="DataSourcesPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="DimensionLibraryPage" accessGroup="Everyone" accessGroupType="Group" />
+            <role name="FxRatesPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="FormTemplatesPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="JournalTemplatesPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="SpreadsheetPage" accessGroup="Everyone" accessGroupType="Group" />
+            <role name="TextEditor" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="TimeDimProfilesPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="TransformationRulesPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="WorkflowChannelsPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+            <role name="WorkflowProfilesPage" accessGroup="OneStream Enterprise Application - TechSupport_ENT_APP" accessGroupType="Group" />
+        </applicationSecurityRoles>
+    </applicationSecurityRolesRoot>
+</OneStreamXF>

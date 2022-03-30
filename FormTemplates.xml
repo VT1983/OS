@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OneStreamXF version="6.8.1.13230">
+    <formTemplatesRoot>
+        <formTemplateGroups>
+            <formTemplateGroup name="SAMS_Merch_Forecast" description="" accessGroup="Everyone" maintenanceGroup="Everyone">
+                <formTemplates>
+                    <formTemplate name="Segment Manual Load" description="" formType="CubeView" itemName="cv_Sams_Total_Segment_Form" requirementLevel="Optional" requirementFrequency="AllTimePeriods" timeFilterForReqtFreq="" timeFilterForCompleteForm="">
+                        <XFFormTemplateOptions>
+                            <LiteralParameterValues />
+                            <RefreshSpreadsheetWhenOpened>true</RefreshSpreadsheetWhenOpened>
+                            <Parameters />
+                        </XFFormTemplateOptions>
+                        <excelFileName></excelFileName>
+                        <excelFile><![CDATA[]]></excelFile>
+                    </formTemplate>
+                </formTemplates>
+            </formTemplateGroup>
+            <formTemplateGroup name="SmartSpend Expense Planning" description="SmartSpend Expense Planning" accessGroup="Everyone" maintenanceGroup="Everyone">
+                <formTemplates>
+                    <formTemplate name="Import from Excel" description="" formType="Spreadsheet" itemName="" requirementLevel="Optional" requirementFrequency="AllTimePeriods" timeFilterForReqtFreq="" timeFilterForCompleteForm="">
+                        <XFFormTemplateOptions>
+                            <LiteralParameterValues />
+                            <RefreshSpreadsheetWhenOpened>true</RefreshSpreadsheetWhenOpened>
+                            <Parameters />
+                        </XFFormTemplateOptions>
+                        <excelFileName>Training Cost Internal QV.xlsx</excelFileName>
+                        <excelFile><![CDATA[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]]></excelFile>
+                    </formTemplate>
+                    <formTemplate name="Professional Services" description="Professional Services" formType="CubeView" itemName="Professional Services (Forms)" requirementLevel="Optional" requirementFrequency="AllTimePeriods" timeFilterForReqtFreq="" timeFilterForCompleteForm="">
+                        <XFFormTemplateOptions>
+                            <LiteralParameterValues />
+                            <RefreshSpreadsheetWhenOpened>true</RefreshSpreadsheetWhenOpened>
+                            <Parameters />
+                        </XFFormTemplateOptions>
+                        <excelFileName></excelFileName>
+                        <excelFile><![CDATA[]]></excelFile>
+                    </formTemplate>
+                    <formTemplate name="Spend Asumptions" description="" formType="CubeView" itemName="AR1: Spend Assumptions" requirementLevel="Optional" requirementFrequency="AllTimePeriods" timeFilterForReqtFreq="" timeFilterForCompleteForm="">
+                        <XFFormTemplateOptions>
+                            <LiteralParameterValues />
+                            <RefreshSpreadsheetWhenOpened>true</RefreshSpreadsheetWhenOpened>
+                            <Parameters />
+                        </XFFormTemplateOptions>
+                        <excelFileName></excelFileName>
+                        <excelFile><![CDATA[]]></excelFile>
+                    </formTemplate>
+                    <formTemplate name="Training Cost Internal" description="Training Cost - Internal" formType="CubeView" itemName="Training Cost Internal (Forms)" requirementLevel="Optional" requirementFrequency="AllTimePeriods" timeFilterForReqtFreq="" timeFilterForCompleteForm="">
+                        <XFFormTemplateOptions>
+                            <LiteralParameterValues />
+                            <RefreshSpreadsheetWhenOpened>true</RefreshSpreadsheetWhenOpened>
+                            <Parameters />
+                        </XFFormTemplateOptions>
+                        <excelFileName></excelFileName>
+                        <excelFile><![CDATA[]]></excelFile>
+                    </formTemplate>
+                </formTemplates>
+            </formTemplateGroup>
+            <formTemplateGroup name="StoreOps_Forecast_Fuel_Upload" description="" accessGroup="Everyone" maintenanceGroup="Everyone">
+                <formTemplates>
+                    <formTemplate name="StoreOps_Fuel_Template" description="" formType="Dashboard" itemName="0 Frame Fuel Upload" requirementLevel="Required" requirementFrequency="AllTimePeriods" timeFilterForReqtFreq="" timeFilterForCompleteForm="">
+                        <XFFormTemplateOptions>
+                            <LiteralParameterValues />
+                            <RefreshSpreadsheetWhenOpened>true</RefreshSpreadsheetWhenOpened>
+                            <Parameters />
+                        </XFFormTemplateOptions>
+                        <excelFileName></excelFileName>
+                        <excelFile><![CDATA[]]></excelFile>
+                    </formTemplate>
+                </formTemplates>
+            </formTemplateGroup>
+            <formTemplateGroup name="StoreOps_Forecast_H&amp;W_Upload" description="" accessGroup="Everyone" maintenanceGroup="Everyone">
+                <formTemplates>
+                    <formTemplate name="StoreOps_H&amp;W_Template" description="" formType="Dashboard" itemName="0 Frame H&amp;W Upload" requirementLevel="Required" requirementFrequency="AllTimePeriods" timeFilterForReqtFreq="" timeFilterForCompleteForm="">
+                        <XFFormTemplateOptions>
+                            <LiteralParameterValues />
+                            <RefreshSpreadsheetWhenOpened>true</RefreshSpreadsheetWhenOpened>
+                            <Parameters />
+                        </XFFormTemplateOptions>
+                        <excelFileName></excelFileName>
+                        <excelFile><![CDATA[]]></excelFile>
+                    </formTemplate>
+                </formTemplates>
+            </formTemplateGroup>
+            <formTemplateGroup name="StoreOps_Forecast_PR_Upload" description="" accessGroup="Everyone" maintenanceGroup="Everyone">
+                <formTemplates>
+                    <formTemplate name="StoreOps_PR_Template" description="" formType="Dashboard" itemName="0 Frame PR Upload" requirementLevel="Required" requirementFrequency="AllTimePeriods" timeFilterForReqtFreq="" timeFilterForCompleteForm="">
+                        <XFFormTemplateOptions>
+                            <LiteralParameterValues />
+                            <RefreshSpreadsheetWhenOpened>true</RefreshSpreadsheetWhenOpened>
+                            <Parameters />
+                        </XFFormTemplateOptions>
+                        <excelFileName></excelFileName>
+                        <excelFile><![CDATA[]]></excelFile>
+                    </formTemplate>
+                </formTemplates>
+            </formTemplateGroup>
+        </formTemplateGroups>
+        <formTemplateProfiles>
+            <formTemplateProfile name="SAMS_Merch_Forecast" description="" accessGroup="Everyone" maintenanceGroup="Everyone">
+                <members>
+                    <member name="SAMS_Merch_Forecast" />
+                </members>
+            </formTemplateProfile>
+            <formTemplateProfile name="SmartSpend Expense Planning" description="SmartSpend Expense Planning" accessGroup="Everyone" maintenanceGroup="Everyone">
+                <members>
+                    <member name="SmartSpend Expense Planning" />
+                </members>
+            </formTemplateProfile>
+            <formTemplateProfile name="StoreOps_Forecast_Fuel_Profile" description="" accessGroup="Everyone" maintenanceGroup="Everyone">
+                <members>
+                    <member name="StoreOps_Forecast_Fuel_Upload" />
+                </members>
+            </formTemplateProfile>
+            <formTemplateProfile name="StoreOps_Forecast_H&amp;W_Profile" description="" accessGroup="Everyone" maintenanceGroup="Everyone">
+                <members>
+                    <member name="StoreOps_Forecast_H&amp;W_Upload" />
+                </members>
+            </formTemplateProfile>
+            <formTemplateProfile name="StoreOps_Forecast_PR_Profile" description="" accessGroup="Everyone" maintenanceGroup="Everyone">
+                <members>
+                    <member name="StoreOps_Forecast_PR_Upload" />
+                </members>
+            </formTemplateProfile>
+        </formTemplateProfiles>
+    </formTemplatesRoot>
+</OneStreamXF>

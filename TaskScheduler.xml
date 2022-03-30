@@ -1,0 +1,915 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OneStreamXF version="6.8.1.13230">
+    <taskScheduler>
+        <taskScheduler>
+            <ScheduleItem>
+                <Name>Execute_Actuals_SAMS</Name>
+                <Description>Execute_Actuals_SAMS</Description>
+                <UserName>vn50tv8</UserName>
+                <DataMgmtSequenceName>Execute_Actuals_SAMS</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs>WFYear=2022M6</DataMgmtSequenceArgs>
+                <StartTime>2021-12-01T13:30:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>vn52ah5</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Monthly</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>0</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays>
+                        <NumericDay>1</NumericDay>
+                        <NumericDay>2</NumericDay>
+                        <NumericDay>3</NumericDay>
+                    </NumericDays>
+                    <ScheduleMonths>
+                        <XFMonth>Jan</XFMonth>
+                        <XFMonth>Feb</XFMonth>
+                        <XFMonth>Mar</XFMonth>
+                        <XFMonth>Apr</XFMonth>
+                        <XFMonth>May</XFMonth>
+                        <XFMonth>Jun</XFMonth>
+                        <XFMonth>Jul</XFMonth>
+                        <XFMonth>Aug</XFMonth>
+                        <XFMonth>Sep</XFMonth>
+                        <XFMonth>Oct</XFMonth>
+                        <XFMonth>Nov</XFMonth>
+                        <XFMonth>Dec</XFMonth>
+                    </ScheduleMonths>
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>Onetimer_SetLiteralParameterValue_Weekly</Name>
+                <Description>Onetimer_SetLiteralParameterValue_ENTCurrentYear and ENTCurrentMonth</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>OneTimer_SetLiteralParameterValue</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2022-01-27T14:30:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>vn50tv8</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Weekly</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>0</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>1</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays>
+                        <XFDay>Sunday</XFDay>
+                    </ScheduleDays>
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>Walmart Dev Metadata Export</Name>
+                <Description>Walmart Dev Metadata Export</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>Export</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-11-09T06:30:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>vn52ah5</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>DEV Error Log Clear7</Name>
+                <Description>DEV Error Log Clear7</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>Clear_Error</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-11-08T22:30:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>vn52ah5</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>System Diagnostics Snapshot Automation</Name>
+                <Description>Scheduled environment and application snapshot.</Description>
+                <UserName>s0m0cau</UserName>
+                <DataMgmtSequenceName>SnapAutomation_OSD</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs>Year=2021,DataVolume=10</DataMgmtSequenceArgs>
+                <StartTime>2021-11-09T00:30:00</StartTime>
+                <ExpirationTime>2200-12-31T00:00:00</ExpirationTime>
+                <ManagerName>vn52ah5</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Monthly</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>0</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays>
+                        <XFDay>Saturday</XFDay>
+                    </ScheduleDays>
+                    <NumericDays />
+                    <ScheduleMonths>
+                        <XFMonth>Jan</XFMonth>
+                        <XFMonth>Feb</XFMonth>
+                        <XFMonth>Mar</XFMonth>
+                        <XFMonth>Apr</XFMonth>
+                        <XFMonth>May</XFMonth>
+                        <XFMonth>Jun</XFMonth>
+                        <XFMonth>Jul</XFMonth>
+                        <XFMonth>Aug</XFMonth>
+                        <XFMonth>Sep</XFMonth>
+                        <XFMonth>Oct</XFMonth>
+                        <XFMonth>Nov</XFMonth>
+                        <XFMonth>Dec</XFMonth>
+                    </ScheduleMonths>
+                    <OnWeeksOfMonth>
+                        <XFOnWeekOfMonth>Third</XFOnWeekOfMonth>
+                    </OnWeeksOfMonth>
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>ENT_ACTUAL_METRICS</Name>
+                <Description>Schedule to run every month day 3 to day 13 at 5:00 am CST</Description>
+                <UserName>vn516zx</UserName>
+                <DataMgmtSequenceName>Execute_ENT_Actual_Metrics_Load</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs>globTime=BRString(TaskScheduler_Params|ClosedPeriod)</DataMgmtSequenceArgs>
+                <StartTime>2022-04-03T09:00:00</StartTime>
+                <ExpirationTime>2200-12-31T05:00:00</ExpirationTime>
+                <ManagerName>vn516zx</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Monthly</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>0</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays>
+                        <NumericDay>3</NumericDay>
+                        <NumericDay>4</NumericDay>
+                        <NumericDay>5</NumericDay>
+                        <NumericDay>6</NumericDay>
+                        <NumericDay>7</NumericDay>
+                        <NumericDay>8</NumericDay>
+                        <NumericDay>9</NumericDay>
+                        <NumericDay>10</NumericDay>
+                        <NumericDay>11</NumericDay>
+                        <NumericDay>12</NumericDay>
+                        <NumericDay>13</NumericDay>
+                    </NumericDays>
+                    <ScheduleMonths>
+                        <XFMonth>Jan</XFMonth>
+                        <XFMonth>Feb</XFMonth>
+                        <XFMonth>Mar</XFMonth>
+                        <XFMonth>Apr</XFMonth>
+                        <XFMonth>May</XFMonth>
+                        <XFMonth>Jun</XFMonth>
+                        <XFMonth>Jul</XFMonth>
+                        <XFMonth>Aug</XFMonth>
+                        <XFMonth>Sep</XFMonth>
+                        <XFMonth>Oct</XFMonth>
+                        <XFMonth>Nov</XFMonth>
+                        <XFMonth>Dec</XFMonth>
+                    </ScheduleMonths>
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>Security Export</Name>
+                <Description>Security Export</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>Execute_Export_Security</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-11-09T07:00:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>vn52ah5</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>3</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>DEV Error Log Clear8</Name>
+                <Description>DEV Error Log Clear8</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>Clear_Error</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-11-09T04:30:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>vn52ah5</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>Clear Error Log</Name>
+                <Description>Clear Error Log in DEV</Description>
+                <UserName>s0m0cau</UserName>
+                <DataMgmtSequenceName>Clear_Error</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-11-09T13:30:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>vn52ah5</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>Onetimer_Actual_Scheduled_Nightly_Job_Weekly</Name>
+                <Description>Onetimer_Actual_Scheduled_Nightly_Job_Weekly</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>OneTimer_Actual_Scheduled_Nightly_Job</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2022-01-27T15:00:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>vn50tv8</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Weekly</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>0</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>1</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays>
+                        <XFDay>Sunday</XFDay>
+                    </ScheduleDays>
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>Error Log Clear DEV</Name>
+                <Description>Error Log Clear DEV</Description>
+                <UserName>s0m0cau</UserName>
+                <DataMgmtSequenceName>Clear_Error</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-11-09T01:30:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>vn52ah5</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>ES_Execute_Plan_Working_Corp</Name>
+                <Description>CORP Load</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>Execute_PLAN_SS</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs>Year=2022</DataMgmtSequenceArgs>
+                <StartTime>2021-03-19T09:30:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>vn50tv8</ManagerName>
+                <IsEnabledByManager>false</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>Error Log Clear Development</Name>
+                <Description>Error Log Clear DEV</Description>
+                <UserName>s0m0cau</UserName>
+                <DataMgmtSequenceName>Clear_Error</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-11-09T07:30:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>vn52ah5</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>ES_Execute_eCF_Plan_Working_and_ADJ_WMTUS_eComm</Name>
+                <Description>eCF Plan Load and eComm Adjustment Load</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>Execute_eCF_Plan_Working_and_ADJ_WMTUS_eComm</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-03-19T14:00:00</StartTime>
+                <ExpirationTime>2200-12-31T06:00:00</ExpirationTime>
+                <ManagerName>vn50tv8</ManagerName>
+                <IsEnabledByManager>false</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>OneTime</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>0</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>Onetimer_SetLiteralParameterValue_Monthly</Name>
+                <Description>Onetimer_SetLiteralParameterValue_ENTCurrentYear and ENTCurrentMonth</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>OneTimer_SetLiteralParameterValue</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2022-01-31T07:30:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>OSAutomation</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Monthly</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>0</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays>
+                        <NumericDay>Last</NumericDay>
+                    </NumericDays>
+                    <ScheduleMonths>
+                        <XFMonth>Jan</XFMonth>
+                        <XFMonth>Feb</XFMonth>
+                        <XFMonth>Mar</XFMonth>
+                        <XFMonth>Apr</XFMonth>
+                        <XFMonth>May</XFMonth>
+                        <XFMonth>Jun</XFMonth>
+                        <XFMonth>Jul</XFMonth>
+                        <XFMonth>Aug</XFMonth>
+                        <XFMonth>Sep</XFMonth>
+                        <XFMonth>Oct</XFMonth>
+                        <XFMonth>Nov</XFMonth>
+                        <XFMonth>Dec</XFMonth>
+                    </ScheduleMonths>
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>ES_Execute_Tax_Calculation_AM</Name>
+                <Description>ES_Execute_Tax_Calculation_AM Load</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>Execute_Tax_Calculation_Actual</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-04-30T12:30:00</StartTime>
+                <ExpirationTime>2200-12-30T16:00:00</ExpirationTime>
+                <ManagerName>vn50qul</ManagerName>
+                <IsEnabledByManager>false</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Monthly</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>0</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays>
+                        <NumericDay>1</NumericDay>
+                        <NumericDay>2</NumericDay>
+                        <NumericDay>3</NumericDay>
+                        <NumericDay>4</NumericDay>
+                        <NumericDay>5</NumericDay>
+                        <NumericDay>6</NumericDay>
+                        <NumericDay>7</NumericDay>
+                        <NumericDay>8</NumericDay>
+                        <NumericDay>9</NumericDay>
+                        <NumericDay>10</NumericDay>
+                        <NumericDay>11</NumericDay>
+                        <NumericDay>12</NumericDay>
+                        <NumericDay>13</NumericDay>
+                        <NumericDay>14</NumericDay>
+                        <NumericDay>15</NumericDay>
+                    </NumericDays>
+                    <ScheduleMonths>
+                        <XFMonth>Jan</XFMonth>
+                        <XFMonth>Feb</XFMonth>
+                        <XFMonth>Mar</XFMonth>
+                        <XFMonth>Apr</XFMonth>
+                        <XFMonth>May</XFMonth>
+                        <XFMonth>Jun</XFMonth>
+                        <XFMonth>Jul</XFMonth>
+                        <XFMonth>Aug</XFMonth>
+                        <XFMonth>Sep</XFMonth>
+                        <XFMonth>Oct</XFMonth>
+                        <XFMonth>Nov</XFMonth>
+                        <XFMonth>Dec</XFMonth>
+                    </ScheduleMonths>
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>Test ES Export</Name>
+                <Description>Test ES Export</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>Export</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-03-09T11:10:57</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>s0m0cau</ManagerName>
+                <IsEnabledByManager>false</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>OneTime</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>0</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>ENTALL_Forecast_Working</Name>
+                <Description>ENTALL Forecast Working</Description>
+                <UserName>vn52qgb</UserName>
+                <DataMgmtSequenceName>ENTALL_Fcst_Working</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-12-14T20:15:39.557</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>vn52qgb</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Weekly</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>0</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>1</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays>
+                        <XFDay>Monday</XFDay>
+                        <XFDay>Tuesday</XFDay>
+                        <XFDay>Wednesday</XFDay>
+                        <XFDay>Thursday</XFDay>
+                        <XFDay>Friday</XFDay>
+                    </ScheduleDays>
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>ES_Execute_Merch_Planner_Plan_Working_WMTUS</Name>
+                <Description>Merch_Planner Plan Load</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>Execute_Merch_Planner_Plan_Working_WMTUS</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-03-22T14:00:00</StartTime>
+                <ExpirationTime>2200-12-31T06:00:00</ExpirationTime>
+                <ManagerName>vn50tv8</ManagerName>
+                <IsEnabledByManager>false</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>Onetimer_Actual_Scheduled_Nightly_Job_Monthly</Name>
+                <Description>Onetimer_Actual_Scheduled_Nightly_Job_Monthly</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>OneTimer_Actual_Scheduled_Nightly_Job</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2022-01-31T08:00:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>OSAutomation</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Monthly</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>0</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays>
+                        <NumericDay>Last</NumericDay>
+                    </NumericDays>
+                    <ScheduleMonths>
+                        <XFMonth>Jan</XFMonth>
+                        <XFMonth>Feb</XFMonth>
+                        <XFMonth>Mar</XFMonth>
+                        <XFMonth>Apr</XFMonth>
+                        <XFMonth>May</XFMonth>
+                        <XFMonth>Jun</XFMonth>
+                        <XFMonth>Jul</XFMonth>
+                        <XFMonth>Aug</XFMonth>
+                        <XFMonth>Sep</XFMonth>
+                        <XFMonth>Oct</XFMonth>
+                        <XFMonth>Nov</XFMonth>
+                        <XFMonth>Dec</XFMonth>
+                    </ScheduleMonths>
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>Error Log Clear</Name>
+                <Description>Error Log Clear of DEV</Description>
+                <UserName>s0m0cau</UserName>
+                <DataMgmtSequenceName>Clear_Error</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-11-08T19:30:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>vn52ah5</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>ES_Execute_Plan_Working_SAMS</Name>
+                <Description>SAMS Load</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>Execute_SS_PLAN_WORKING_SAMS</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-03-19T10:00:00</StartTime>
+                <ExpirationTime>2200-12-31T06:00:00</ExpirationTime>
+                <ManagerName>vn50tv8</ManagerName>
+                <IsEnabledByManager>false</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>DEV Error Log Clear5</Name>
+                <Description>DEV Error Log Clear5</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>Clear_Error</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-11-09T16:30:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>vn52ah5</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>EPtoENT</Name>
+                <Description />
+                <UserName>d0r06fa</UserName>
+                <DataMgmtSequenceName>EPtoENT_Trigger_MAIN</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs>getcclist_flag=Watcher</DataMgmtSequenceArgs>
+                <StartTime>2021-09-09T05:29:32</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>d0r06fa</ManagerName>
+                <IsEnabledByManager>false</IsEnabledByManager>
+                <IsEnabledByUser>false</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Minutely</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>30</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>0</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>DEV Error Log Clear6</Name>
+                <Description>DEV Error Log Clear6</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>Clear_Error</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-11-09T10:30:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>vn52ah5</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>Execute_Consolidation</Name>
+                <Description>Execute Daily Consolidation</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>Execute_Daily_Consolidation</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-05-01T06:00:00.357</StartTime>
+                <ExpirationTime>2200-12-31T06:00:00</ExpirationTime>
+                <ManagerName>vn50qul</ManagerName>
+                <IsEnabledByManager>false</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>ES_Execute_Plan_Working_SCAT_SAMS</Name>
+                <Description>SCAT Load</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>Execute_SCAT_AOP_Plan_Working_Sams</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-03-19T11:00:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>vn50tv8</ManagerName>
+                <IsEnabledByManager>true</IsEnabledByManager>
+                <IsEnabledByUser>false</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>ES_Execute_Plan_Working</Name>
+                <Description>WMTUS Load</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>Execute_SS_PLAN_WORKING</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-03-19T09:00:00</StartTime>
+                <ExpirationTime>2200-12-31T06:00:00</ExpirationTime>
+                <ManagerName>vn50tv8</ManagerName>
+                <IsEnabledByManager>false</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>ES_Execute_PBC_Plan_Working_Sams</Name>
+                <Description>PBC Plan Load</Description>
+                <UserName>OSAutomation</UserName>
+                <DataMgmtSequenceName>Execute_PBC_Plan_Working_Sams</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-03-22T14:00:00</StartTime>
+                <ExpirationTime>2200-12-31T06:00:00</ExpirationTime>
+                <ManagerName>vn50tv8</ManagerName>
+                <IsEnabledByManager>false</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+            <ScheduleItem>
+                <Name>CFR_Audit_Automation</Name>
+                <Description />
+                <UserName>s0s0acj</UserName>
+                <DataMgmtSequenceName>Execute_CFR_Alert_Job</DataMgmtSequenceName>
+                <DataMgmtSequenceArgs />
+                <StartTime>2021-06-11T03:30:00</StartTime>
+                <ExpirationTime>2200-12-30T18:30:00</ExpirationTime>
+                <ManagerName>s0m0cau</ManagerName>
+                <IsEnabledByManager>false</IsEnabledByManager>
+                <IsEnabledByUser>true</IsEnabledByUser>
+                <ItemDefinition>
+                    <ScheduleFrequency>Daily</ScheduleFrequency>
+                    <ScheduleEveryNumMinutes>0</ScheduleEveryNumMinutes>
+                    <ScheduleOccurEveryXDaysWeeks>1</ScheduleOccurEveryXDaysWeeks>
+                    <ScheduleOccurEveryXWeeks>0</ScheduleOccurEveryXWeeks>
+                    <ScheduleDays />
+                    <NumericDays />
+                    <ScheduleMonths />
+                    <OnWeeksOfMonth />
+                    <NumAllowedFailures>0</NumAllowedFailures>
+                    <EnableRunWindow>false</EnableRunWindow>
+                    <RunWindowStartTime>1900-01-01T00:00:00</RunWindowStartTime>
+                    <RunWindowEndTime>2200-12-31T00:00:00</RunWindowEndTime>
+                </ItemDefinition>
+            </ScheduleItem>
+        </taskScheduler>
+    </taskScheduler>
+</OneStreamXF>

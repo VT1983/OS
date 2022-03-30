@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OneStreamXF version="6.8.1.13230">
+    <certificationQuestionsRoot>
+        <certificationGroups>
+            <certificationGroup name="(Quick Certify)" description="Is the workflow complete?" scenarioTypeName="Unknown" accessGroup="Everyone" maintenanceGroup="Everyone">
+                <certificationQuestions>
+                    <certificationQuestion name="(Quick Certify)" category="General" riskLevel="Unknown" requirementFrequency="AllTimePeriods" timeFilterForReqtFreq="" text="Is the workflow complete?" responseOptional="false" deactivated="false" deactivatedDate="01/01/1900 00:00:00" displayOrder="0" />
+                </certificationQuestions>
+            </certificationGroup>
+        </certificationGroups>
+        <certificationProfiles>
+            <certificationProfile name="(Quick Certify)" description="Workflow Complete" cubeName="(All)" scenarioTypeName="(All)" accessGroup="Everyone" maintenanceGroup="Everyone">
+                <members>
+                    <member name="(Quick Certify)" />
+                </members>
+            </certificationProfile>
+        </certificationProfiles>
+    </certificationQuestionsRoot>
+</OneStreamXF>

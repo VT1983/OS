@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OneStreamXF version="6.8.1.13230">
+    <workflowChannelsRoot>
+        <workflowChannels>
+            <workflowChannel name="Adj" uniqueID="ee02cedc-2cb8-4f46-a999-ed868885d281" description="" />
+            <workflowChannel name="Base" uniqueID="b1de734a-6be8-4b13-8206-0e1c8fa14381" description="" />
+            <workflowChannel name="Compensation Adj" uniqueID="37264506-7803-4137-8bd4-b24aef7240c3" description="CompAdj_XX" />
+            <workflowChannel name="Corp_Lift_and_Shifts" uniqueID="1e0ce2f9-4b71-43ad-a508-98ec6404f6a2" description="" />
+            <workflowChannel name="Enterprise OT" uniqueID="7d2d4c61-3cdc-4603-b443-d7d7b467ffdd" description="ENT_OneTimer_AdjXX" />
+            <workflowChannel name="Exp_App_Adj" uniqueID="57b53951-667c-4919-838b-10fb699a3bae" description="" />
+            <workflowChannel name="EXP_DP_ADJ" uniqueID="26fca9f2-7348-4c2d-a42c-aae4f06e9198" description="" />
+            <workflowChannel name="Expense_App" uniqueID="fa86e8d5-5aa0-46fc-8972-72bcb1c4eab1" description="" />
+            <workflowChannel name="External Adj" uniqueID="e73ff3c3-c29b-4026-97f2-0f81bcdd2116" description="ExtAdj_XX" />
+            <workflowChannel name="Functional_Adjustment" uniqueID="fcba4e97-c1f3-456c-99dd-051a5bea6fbc" description="Functional Adjustment" />
+            <workflowChannel name="Functional_Forecast" uniqueID="99c0ecde-59ac-4cfe-8866-ee4ffa7d4209" description="Functional Forecast" />
+            <workflowChannel name="Functional_Initial_Forecast" uniqueID="3b44af07-d5af-4697-b2d2-0a4ce5f1ecff" description="Functional Initial Forecast" />
+            <workflowChannel name="FunctionalSeg_Adj" uniqueID="04a9127f-3bf8-4527-8d8a-f71c2e80a8e2" description="FunctionalSeg Adj" />
+            <workflowChannel name="HFM_Adj" uniqueID="8b52008a-2533-4f7b-9c3a-42d7c5401132" description="HFM Adjustments" />
+            <workflowChannel name="Segment OT" uniqueID="0b54172a-d78e-47c9-828a-458912c249d3" description="Onetimer_AdjXX" />
+        </workflowChannels>
+    </workflowChannelsRoot>
+</OneStreamXF>
